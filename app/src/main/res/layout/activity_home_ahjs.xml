@@ -7,14 +7,18 @@
     tools:context="app004.flagquizapp_ahjs.Home_ahjs">
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textViewinfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="142dp"
         android:layout_marginTop="272dp"
         android:layout_marginEnd="211dp"
         android:layout_marginBottom="440dp"
-        android:text="TextView"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:onClick="Jugar"
+        android:text="Jugar"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,9 +32,10 @@
         android:layout_marginTop="100dp"
         android:layout_marginEnd="181dp"
         android:layout_marginBottom="291dp"
-        android:text="Button"
+        android:onClick="Jugar"
+        android:text="Jugar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewinfo" />
 </android.support.constraint.ConstraintLayout>
