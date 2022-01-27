@@ -1,4 +1,4 @@
-package app004.flagquizapp;
+package app004.flagquizapp_ahjs;
 
 
 import android.app.AlertDialog;
@@ -9,7 +9,9 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.util.Log;
 
-public class ResultadosDialogFragment extends DialogFragment{
+import app004.flagquizapp.R;
+
+public class ResultadosDialogFragment_ahjs extends DialogFragment{
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -19,7 +21,7 @@ public class ResultadosDialogFragment extends DialogFragment{
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        final LogicaDePreguntas quizViewModel = ViewModelProviders.of(getActivity()).get(LogicaDePreguntas.class);
+        final LogicaDePreguntas__ahjs quizViewModel = ViewModelProviders.of(getActivity()).get(LogicaDePreguntas__ahjs.class);
         int totalGuesses = quizViewModel.getTotalGuesses();
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setMessage(
@@ -29,7 +31,7 @@ public class ResultadosDialogFragment extends DialogFragment{
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 try{
-                    MainActivityFragment quizFragment = (MainActivityFragment) getParentFragment();
+                    MainActivityFragment_ahjs quizFragment = (MainActivityFragment_ahjs) getParentFragment();
                     try{
                         quizFragment.resetQuiz();
                     }catch (Exception e){

@@ -1,4 +1,4 @@
-package app004.flagquizapp;
+package app004.flagquizapp_ahjs;
 
 import android.arch.lifecycle.ViewModel;
 import android.content.res.AssetManager;
@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
-public class LogicaDePreguntas extends ViewModel {
+public class LogicaDePreguntas__ahjs extends ViewModel {
     private static final String TAG = "FlagQuiz Activity";
     private static final int FLAGS_IN_QUIZ = 10;
 
@@ -22,7 +22,7 @@ public class LogicaDePreguntas extends ViewModel {
     private int correctAnswers;
     private int guessRows;
 
-    public LogicaDePreguntas() {
+    public LogicaDePreguntas__ahjs() {
         fileNameList = new ArrayList<>();
         quizCountriesList = new ArrayList<>();
     }

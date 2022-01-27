@@ -1,10 +1,10 @@
-package app004.flagquizapp;
+package app004.flagquizapp_ahjs;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
-public class SettingsActivity extends AppCompatActivity{
+public class SettingsActivity_ahjs extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

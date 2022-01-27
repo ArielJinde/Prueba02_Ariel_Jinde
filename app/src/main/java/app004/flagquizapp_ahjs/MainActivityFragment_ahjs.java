@@ -1,4 +1,4 @@
-package app004.flagquizapp;
+package app004.flagquizapp_ahjs;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -28,7 +28,9 @@ import android.widget.TextView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 
-public class MainActivityFragment extends Fragment {
+import app004.flagquizapp.R;
+
+public class MainActivityFragment_ahjs extends Fragment {
 
     private SecureRandom random;
     private Animation shakeAnimation;
@@ -37,12 +39,12 @@ public class MainActivityFragment extends Fragment {
     private ImageView flagImageView;
     private TableRow[] guessTableRows;
     private TextView answerTextView;
-    private LogicaDePreguntas quizViewModel;
+    private LogicaDePreguntas__ahjs quizViewModel;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.quizViewModel = ViewModelProviders.of(getActivity()).get(LogicaDePreguntas.class);
+        this.quizViewModel = ViewModelProviders.of(getActivity()).get(LogicaDePreguntas__ahjs.class);
     }
 
     @Override
@@ -50,7 +52,7 @@ public class MainActivityFragment extends Fragment {
                              Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_main, container, false);
-        OnClickListener guessButtonListener = new ResultadoButtonListener(this);
+        OnClickListener guessButtonListener = new ResultadoButtonListener_ahjs(this);
         TableLayout answersTableLayout = view.findViewById(R.id.answersTableLayout);
 
         this.random = new SecureRandom();
@@ -71,7 +73,7 @@ public class MainActivityFragment extends Fragment {
                     this.guessTableRows[i] = (TableRow) answersTableLayout.getChildAt(i);
                 }
             } catch (ArrayStoreException e) {
-                Log.e(LogicaDePreguntas.getTag(),
+                Log.e(LogicaDePreguntas__ahjs.getTag(),
                         "Error getting button rows on loop #" + String.valueOf(i), e);
             }
         }
@@ -83,7 +85,7 @@ public class MainActivityFragment extends Fragment {
         }
 
         this.questionNumberTextView.setText(
-                getString(app004.flagquizapp.R.string.question, 1, LogicaDePreguntas.getFlagsInQuiz()));
+                getString(app004.flagquizapp.R.string.question, 1, LogicaDePreguntas__ahjs.getFlagsInQuiz()));
         return view;
     }
 
@@ -107,7 +109,7 @@ public class MainActivityFragment extends Fragment {
 
         int flagCounter = 1;
         int numberOfFlags = this.quizViewModel.getFileNameList().size();
-        while (flagCounter <= LogicaDePreguntas.getFlagsInQuiz()) {
+        while (flagCounter <= LogicaDePreguntas__ahjs.getFlagsInQuiz()) {
             int randomIndex = this.random.nextInt(numberOfFlags);
 
             String filename = this.quizViewModel.getFileNameList().get(randomIndex);
@@ -131,14 +133,14 @@ public class MainActivityFragment extends Fragment {
         answerTextView.setText("");
 
         questionNumberTextView.setText(getString(app004.flagquizapp.R.string.question,
-                (quizViewModel.getCorrectAnswers() + 1), LogicaDePreguntas.getFlagsInQuiz()));
+                (quizViewModel.getCorrectAnswers() + 1), LogicaDePreguntas__ahjs.getFlagsInQuiz()));
 
         try (InputStream stream = assets.open(region + "/" + nextImage + ".png")) {
             Drawable flag = Drawable.createFromStream(stream, nextImage);
             flagImageView.setImageDrawable(flag);
             animate(false);
         } catch (IOException e) {
-            Log.e(LogicaDePreguntas.getTag(), "Error Loading " + nextImage, e);
+            Log.e(LogicaDePreguntas__ahjs.getTag(), "Error Loading " + nextImage, e);
         }
 
         this.quizViewModel.shuffleFilenameList();
@@ -208,7 +210,7 @@ public class MainActivityFragment extends Fragment {
         return answerTextView;
     }
 
-    public LogicaDePreguntas getQuizViewModel() {
+    public LogicaDePreguntas__ahjs getQuizViewModel() {
         return quizViewModel;
     }
 }
