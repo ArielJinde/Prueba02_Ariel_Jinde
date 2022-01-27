@@ -20,10 +20,11 @@ public class DBHelper_ahjs extends SQLiteOpenHelper {
         db.execSQL("create table userstable(id_user integer  PRIMARY KEY AUTOINCREMENT NOT NULL," +
                 "username text NOT NULL,clave_user text NOT NULL)");
         /*Hacemos un insert para tener un valkor insertado como predeterminado*/
-        db.execSQL("insert into userstable(username,clave_user) values('admin','admin')");
-        db.execSQL("insert into userstable(username,clave_user) values('usuario1','1234')");
-        db.execSQL("insert into userstable(username,clave_user) values('usuario2','1234')");
-
+        db.execSQL("insert into userstable(username,clave_user) " +
+                "values" +
+                "('admin','admin')," +
+                "('usuario1','1234')," +
+                "('usuario2','1234');");
     }
 
     @Override
@@ -34,8 +35,10 @@ public class DBHelper_ahjs extends SQLiteOpenHelper {
         db.execSQL("create table userstable(id_user integer  PRIMARY KEY AUTOINCREMENT NOT NULL," +
                 "username text NOT NULL,clave_user text NOT NULL)");
         /*Hacemos un insert para tener un valkor insertado como predeterminado*/
-        db.execSQL("insert into userstable(username,clave_user) values('admin','admin')," +
+        db.execSQL("insert into userstable(username,clave_user) " +
+                "values" +
+                "('admin','admin')," +
                 "('usuario1','1234')," +
-                "('usuario2','1234')");
+                "('usuario2','1234');");
         }
 }
