@@ -1,4 +1,4 @@
-package DataBase;
+package DataBase_ahjs;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -7,8 +7,8 @@ import android.support.annotation.Nullable;
 
 //import androidx.annotation.Nullable;
 
-public class AHJS_DBHelper extends SQLiteOpenHelper {
-    public AHJS_DBHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+public class DBHelper_ahjs extends SQLiteOpenHelper {
+    public DBHelper_ahjs(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
 
@@ -34,7 +34,8 @@ public class AHJS_DBHelper extends SQLiteOpenHelper {
         db.execSQL("create table userstable(id_user integer  PRIMARY KEY AUTOINCREMENT NOT NULL," +
                 "username text NOT NULL,clave_user text NOT NULL)");
         /*Hacemos un insert para tener un valkor insertado como predeterminado*/
-        db.execSQL("insert into userstable(username,clave_user) values('admin','admin')");
-
-    }
+        db.execSQL("insert into userstable(username,clave_user) values('admin','admin')," +
+                "('usuario1','1234')," +
+                "('usuario2','1234')");
+        }
 }

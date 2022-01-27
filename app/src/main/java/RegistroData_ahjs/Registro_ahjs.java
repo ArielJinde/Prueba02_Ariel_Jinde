@@ -1,4 +1,4 @@
-package AHJSRegistroData;
+package RegistroData_ahjs;
 
 import android.content.ContentValues;
 import android.content.Intent;
@@ -9,12 +9,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import DataBase.AHJS_DBHelper;
+import DataBase_ahjs.DBHelper_ahjs;
 import app004.flagquizapp.R;
 import app004.flagquizapp_ahjs.MainActivity_ahjs;
 
 
-public class AHJS_Registro extends AppCompatActivity {
+public class Registro_ahjs extends AppCompatActivity {
     /*Titulo de la actividad*/
     String Title="Registro de Usuarios";
     /*EditText para el ingreso de datos del usuario*/
@@ -36,7 +36,7 @@ public class AHJS_Registro extends AppCompatActivity {
          * inicializamos el constructor
          * nombramos la base de datos
          * version de la base de datos*/
-        AHJS_DBHelper admin=new AHJS_DBHelper(this,"instituto",null,1);
+        DBHelper_ahjs admin=new DBHelper_ahjs(this,"instituto",null,1);
         /*Abrimos la base de datos para escritura*/
         SQLiteDatabase db=admin.getWritableDatabase();
         /*creamos dos variables string

@@ -9,8 +9,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import AHJSRegistroData.AHJS_Registro;
-import DataBase.AHJS_DBHelper;
+import RegistroData_ahjs.Registro_ahjs;
+import DataBase_ahjs.DBHelper_ahjs;
 import app004.flagquizapp.R;
 
 public class Login_ahjs extends AppCompatActivity {
@@ -40,7 +40,7 @@ public class Login_ahjs extends AppCompatActivity {
         /*Creamos un objeto de la clase DBHelper e
         instanciamos el constructor y damos el nonbre de
          la base de datos y la version*/
-        AHJS_DBHelper admin=new AHJS_DBHelper(this,"instituto",null,1);
+        DBHelper_ahjs admin=new DBHelper_ahjs(this,"instituto",null,1);
         /*Abrimos la base de datos como escritura*/
         SQLiteDatabase db=admin.getWritableDatabase();
         /*Creamos dos variables string y capturamos los datos
@@ -86,7 +86,7 @@ public class Login_ahjs extends AppCompatActivity {
     //metodo que nos envia a otra ventana
     public void RegistroData(View v){
         //creamos una variables e instanciamos al intent para que me muestra la clase
-        Intent rdata=new Intent(this, AHJS_Registro.class);
+        Intent rdata=new Intent(this, Registro_ahjs.class);
         //lanzamos la actividad
         startActivity(rdata);
     }
