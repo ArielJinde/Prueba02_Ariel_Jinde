@@ -21,6 +21,8 @@ public class AHJS_DBHelper extends SQLiteOpenHelper {
                 "username text NOT NULL,clave_user text NOT NULL)");
         /*Hacemos un insert para tener un valkor insertado como predeterminado*/
         db.execSQL("insert into userstable(username,clave_user) values('admin','admin')");
+        db.execSQL("insert into userstable(username,clave_user) values('usuario1','1234')");
+        db.execSQL("insert into userstable(username,clave_user) values('usuario2','1234')");
 
     }
 

@@ -27,9 +27,9 @@ public class Login_ahjs extends AppCompatActivity {
         //Pintamos el titulo de la actividad
         this.setTitle(Title);
         //habilitamos para que se pueda visualizar el action bar
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+       // getSupportActionBar().setDisplayShowHomeEnabled(true);
         //Indicamos donde esta la imagen para el action bar
-        getSupportActionBar().setIcon(R.drawable.ic_action_name);
+//        getSupportActionBar().setIcon(R.drawable.ic_action_name);
         //emperejamos las variable con el xml editText usuario y password
         et1= (EditText) findViewById(R.id.etusuario);
         et2= (EditText) findViewById(R.id.edtclave);
