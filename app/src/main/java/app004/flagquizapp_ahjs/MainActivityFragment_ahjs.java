@@ -7,6 +7,7 @@ import java.security.SecureRandom;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.drawable.Drawable;
 
@@ -36,6 +37,7 @@ public class MainActivityFragment_ahjs extends Fragment {
     private Animation shakeAnimation;
     private ConstraintLayout quizConstraintLayout;
     private TextView questionNumberTextView;
+    private TextView textViewdatos;
     private ImageView flagImageView;
     private TableRow[] guessTableRows;
     private TextView answerTextView;
@@ -54,7 +56,13 @@ public class MainActivityFragment_ahjs extends Fragment {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
         OnClickListener guessButtonListener = new ResultadoButtonListener_ahjs(this);
         TableLayout answersTableLayout = view.findViewById(R.id.answersTableLayout);
+/*
+        Bundle datosRecuperados = getArguments();
 
+        String mensaje = datosRecuperados.getString("nombre");
+        textViewdatos = view.findViewById(R.id.textView_datos);
+textViewdatos.setText(""+mensaje.toString());
+*/
         this.random = new SecureRandom();
         this.shakeAnimation = AnimationUtils.loadAnimation(getActivity(), R.anim.incorrect_shake);
         this.shakeAnimation.setRepeatCount(3);

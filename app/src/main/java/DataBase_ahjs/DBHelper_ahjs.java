@@ -18,13 +18,13 @@ public class DBHelper_ahjs extends SQLiteOpenHelper {
          * un texto que no puede ser nulo que es el nombre del usuario
          * la contraseña que tambien es un texto y no nulo*/
         db.execSQL("create table userstable(id_user integer  PRIMARY KEY AUTOINCREMENT NOT NULL," +
-                "username text NOT NULL,clave_user text NOT NULL)");
+                "username text NOT NULL,clave_user text NOT NULL,nivel text NOT NULL)");
         /*Hacemos un insert para tener un valkor insertado como predeterminado*/
-        db.execSQL("insert into userstable(username,clave_user) " +
+        db.execSQL("insert into userstable(username,clave_user,nivel) " +
                 "values" +
-                "('admin','admin')," +
-                "('usuario1','1234')," +
-                "('usuario2','1234');");
+                "('admin','admin','1')," +
+                "('usuario1','1234','1')," +
+                "('usuario2','1234','1');");
     }
 
     @Override
@@ -33,12 +33,12 @@ public class DBHelper_ahjs extends SQLiteOpenHelper {
          * un texto que no puede ser nulo que es el nombre del usuario
          * la contraseña que tambien es un texto y no nulo*/
         db.execSQL("create table userstable(id_user integer  PRIMARY KEY AUTOINCREMENT NOT NULL," +
-                "username text NOT NULL,clave_user text NOT NULL)");
+                "username text NOT NULL,clave_user text NOT NULL,nivel text NOT NULL)");
         /*Hacemos un insert para tener un valkor insertado como predeterminado*/
-        db.execSQL("insert into userstable(username,clave_user) " +
+        db.execSQL("insert into userstable(username,clave_user,nivel) " +
                 "values" +
-                "('admin','admin')," +
-                "('usuario1','1234')," +
-                "('usuario2','1234');");
+                "('admin','admin','1')," +
+                "('usuario1','1234','1')," +
+                "('usuario2','1234','1');");
         }
 }

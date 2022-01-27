@@ -50,7 +50,7 @@ public class Login_ahjs extends AppCompatActivity {
         /*inicializamos al cursor y llamamos al objeto de la base
         de datos para realizar un sentencia query where donde
          pasamos las dos variables nombre de usuario y password*/
-        fila=db.rawQuery("select username,clave_user from userstable where username='"+
+        fila=db.rawQuery("select username,clave_user,nivel from userstable where username='"+
                 usuario+"' and clave_user='"+contrasena+"'",null);
         /*Realizamos un try catch para captura de errores*/
         try {
@@ -59,12 +59,16 @@ public class Login_ahjs extends AppCompatActivity {
                 //capturamos los valores del cursos y lo almacenamos en variable
                 String usua=fila.getString(0);
                 String pass=fila.getString(1);
+                String nivel=fila.getString(2);
                 //preguntamos si los datos ingresados son iguales
                 if (usuario.equals(usua)&&contrasena.equals(pass)){
                     //si son iguales entonces vamos a otra ventana
                     //Menu es una nueva actividad empty
-                    Intent ven=new Intent(this, MainActivity_ahjs.class);
+                    Intent ven=new Intent(this, Home_ahjs.class);
                     //lanzamos la actividad
+                    //gurdamos los datos del usuario logeado
+                   ven.putExtra("nombre",usua+"");
+                   ven.putExtra("nivel",nivel+"");
                     startActivity(ven);
                     //limpiamos las las cajas de texto
                     et1.setText("");

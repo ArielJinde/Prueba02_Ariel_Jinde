@@ -10,8 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name="app004.flagquizapp_ahjs.Home_ahjs"
+            android:exported="false" />
+        <activity
             android:name="app004.flagquizapp_ahjs.Login_ahjs"
-
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,9 +25,7 @@
             android:name="app004.flagquizapp_ahjs.MainActivity_ahjs"
             android:label="@string/app_name"
             android:launchMode="singleTop"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name="app004.flagquizapp_ahjs.SettingsActivity_ahjs"
             android:label="@string/title_activity_settings"
@@ -35,7 +35,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="app004.flagquizapp_ahjs.MainActivity_ahjs" />
         </activity>
-
     </application>
 
 </manifest>
